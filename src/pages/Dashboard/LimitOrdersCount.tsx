@@ -31,7 +31,7 @@ export default function LimitOrdersCount() {
       >
         <Title>Limit Orders</Title>
         <Typography component="p" variant="h4">
-          {limitOrdersCount}
+          {limitOrdersCount > 0 ? limitOrdersCount : 0}
         </Typography>
         <Typography color="text.secondary" gutterBottom={true}>
           total limit orders

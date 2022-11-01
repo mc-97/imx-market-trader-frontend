@@ -30,7 +30,7 @@ export default function NftAssetsCount() {
       >
         <Title>Nft Assets</Title>
         <Typography component="p" variant="h4">
-          {nftAssetsCount}
+          {nftAssetsCount > 0 ? nftAssetsCount : 0}
         </Typography>
         <Typography color="text.secondary" gutterBottom={true}>
           total nft assets

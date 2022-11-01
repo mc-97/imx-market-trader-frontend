@@ -1,6 +1,6 @@
 import * as React from 'react';
 import CreateIcon from '@mui/icons-material/Create';
-import { Avatar, Box, Button, Grid, TextField, Typography } from '@mui/material';
+import { Avatar, Box, Button, TextField, Typography } from '@mui/material';
 
 export interface CreateWalletFormProps {
   params?: CreateWalletFormParams;
@@ -31,19 +31,17 @@ export default function CreateWalletForm({ params, onSubmit }: CreateWalletFormP
         Create Wallet
       </Typography>
       <Box width="100%" component="form" noValidate onSubmit={onSubmit} sx={{ p: 3 }}>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            name="walletId"
-            required
-            fullWidth
-            id="walletId"
-            label="Wallet ID"
-            autoFocus
-            defaultValue={params?.walletId}
-            error={walletIdError}
-            onChange={validateWalletId}
-          />
-        </Grid>
+        <TextField
+          name="walletId"
+          required
+          fullWidth
+          id="walletId"
+          label="Wallet ID"
+          autoFocus
+          defaultValue={params?.walletId}
+          error={walletIdError}
+          onChange={validateWalletId}
+        />
         <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
           Confirm Create
         </Button>

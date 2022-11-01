@@ -2,7 +2,7 @@ import * as React from 'react';
 import Layout from './layout/Layout';
 import { Route, Routes } from 'react-router-dom';
 import Wallets from './pages/Wallets/Wallets';
-import Dashboard from './pages/Dashboard/DashBoard';
+import Dashboard from './pages/Dashboard/Dashboard';
 import Collections from './pages/Collections/Collections';
 import LimitOrders from './pages/LimitOrders/LimitOrders';
 

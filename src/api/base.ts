@@ -15,8 +15,9 @@ import { Configuration } from "./configuration";
 // Some imports not used depending on template conditions
 // @ts-ignore
 import globalAxios, { AxiosRequestConfig, AxiosInstance } from 'axios';
+import { API_BASE_PATH } from "../globalVars";
 
-export const BASE_PATH = "http://localhost:3001/".replace(/\/+$/, "");
+export const BASE_PATH = API_BASE_PATH.replace(/\/+$/, "");
 
 /**
  *
