@@ -50,6 +50,7 @@ export default function Collections() {
       const createCollectionDto: CreateCollectionDto = { _id: collectionId, collectionAddress };
       collectionsApi.collectionsControllerCreate(createCollectionDto).then((response) => {
         if (response.data.length === 1) {
+          setCollectionsData([...collectionsData, response.data[0]]);
           setSnackbarSeverity('success');
           setSnackbarMessage('Successfully created collection');
         } else {
@@ -58,7 +59,6 @@ export default function Collections() {
         }
         handleOpenSnackbar();
         handleCloseCreateForm();
-        setReload(true);
       });
     }
   };
@@ -89,6 +89,13 @@ export default function Collections() {
         .collectionsControllerDelete(collectionId, collectionAddress)
         .then((response) => {
           if (response.data.acknowledged === true) {
+            setCollectionsData((current) =>
+              current.filter(
+                (collection) =>
+                  collection._id !== collectionId ||
+                  (collectionAddress && collection.collectionAddress !== collectionAddress)
+              )
+            );
             setSnackbarSeverity('success');
             setSnackbarMessage(`Deleted ${response.data.deletedCount} collections`);
           } else {
@@ -97,7 +104,6 @@ export default function Collections() {
           }
           handleOpenSnackbar();
           handleCloseDeleteForm();
-          setReload(true);
         });
     }
   };
