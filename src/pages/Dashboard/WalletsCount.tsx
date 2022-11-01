@@ -31,7 +31,7 @@ export default function WalletsCount() {
       >
         <Title>Wallets</Title>
         <Typography component="p" variant="h4">
-          {walletsCount}
+          {walletsCount > 0 ? walletsCount : 0}
         </Typography>
         <Typography color="text.secondary" gutterBottom={true}>
           total wallets

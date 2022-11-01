@@ -31,7 +31,7 @@ export default function CollectionsCount() {
       >
         <Title>Collections</Title>
         <Typography component="p" variant="h4">
-          {collectionsCount}
+          {collectionsCount > 0 ? collectionsCount : 0}
         </Typography>
         <Typography color="text.secondary" gutterBottom={true}>
           total collections
